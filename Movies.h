@@ -4,14 +4,15 @@
 #include <vector>
 #include "Movie.h"
 
-class Movies {
+class Movies 
+{
 private:
     std::vector<Movie> m_movies;
 public:
 
     // Member functions
     bool add_movie(const std::string& name, const std::string& rating, int watched);
-    bool increment_watched(Movies& movies, const std::string& name);
+    bool increment_watched(Movies& movies, const std::string& name, int count);
     void display_movies() const;
 
     // Constructor

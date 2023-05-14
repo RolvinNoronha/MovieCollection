@@ -3,7 +3,8 @@
 
 #include <string>
 
-class Movie {
+class Movie 
+{
 private: 
     std::string m_name;
     std::string m_rating;
@@ -14,7 +15,7 @@ public:
     std::string get_name() const { return m_name; }
     std::string get_rating() const { return m_rating; }
     int get_watched() const { return m_watched; }
-    void increment_watched();
+    void increment_watched(int count);
 
     // Constructor
     Movie(const std::string& name, const std::string& rating, int watched);

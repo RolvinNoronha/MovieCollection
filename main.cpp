@@ -4,7 +4,8 @@
 #include "utility.h"
 
 
-int main() {
+int main() 
+{
     Movies my_movies;
     int value = 0;
 

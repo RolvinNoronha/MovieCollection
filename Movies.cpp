@@ -4,8 +4,10 @@
 #include "Movies.h"
 
 
-bool Movies::add_movie(const std::string& name, const std::string& rating, int watched) {
-    for (auto mv: this->m_movies) {
+bool Movies::add_movie(const std::string& name, const std::string& rating, int watched) 
+{
+    for (auto mv: this->m_movies) 
+    {
         if (mv.get_name() == name)
             return false;
     }
@@ -16,10 +18,13 @@ bool Movies::add_movie(const std::string& name, const std::string& rating, int w
 }
 
 
-bool Movies::increment_watched(Movies& movies, const std::string& name) {
-    for (auto& mv: movies.m_movies) {
-        if (mv.get_name() == name) {
-            mv.increment_watched();
+bool Movies::increment_watched(Movies& movies, const std::string& name, int count) 
+{
+    for (auto& mv: movies.m_movies) 
+    {
+        if (mv.get_name() == name) 
+        {
+            mv.increment_watched(count);
             return true;
         }
     }
@@ -28,14 +33,17 @@ bool Movies::increment_watched(Movies& movies, const std::string& name) {
 }
 
 
-void Movies::display_movies() const {
+void Movies::display_movies() const 
+{
 
-    if (this->m_movies.empty()) {
+    if (this->m_movies.empty()) 
+    {
         std::cout << "No movies in the collection \n";
         return;
     }
     
-    for (auto mv: this->m_movies) {
+    for (auto mv: this->m_movies) 
+    {
         std::cout << mv.get_name() << " " << mv.get_rating() << " " << mv.get_watched() << "\n";
     }
 

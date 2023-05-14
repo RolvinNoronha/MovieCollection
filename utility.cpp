@@ -27,8 +27,8 @@ void AddMovie(Movies& movies)
 
 
 
-void increment_watched(Movies& movies, const std::string& name) {
-    if (movies.increment_watched(movies, name))
+void increment_watched(Movies& movies, const std::string& name, int count) {
+    if (movies.increment_watched(movies, name, count))
         std::cout << "Incremented watch count for: " << name << "\n";
     else 
         std::cout << "No movie named [" << name << "] in the collection \n";
@@ -38,11 +38,15 @@ void increment_watched(Movies& movies, const std::string& name) {
 void IncrementWatch(Movies& movies)
 {
     std::string name = "";
+    int count = 0;
     std::cout << "Enter the name of the Movie: ";
     std::cin.ignore();
     std::getline(std::cin, name);
+    std::cout << "Increase count by: ";
+    std::cin >> count;
 
-    increment_watched(movies, name);
+
+    increment_watched(movies, name, count);
 }
 
 

@@ -11,6 +11,7 @@ Movie::Movie(const Movie& source)
 
 Movie::~Movie() {}
 
-void Movie::increment_watched() {
-    m_watched++;
+void Movie::increment_watched(int count) 
+{
+    m_watched += count;
 }
